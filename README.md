@@ -182,7 +182,7 @@ source <(curl -s https://raw.githubusercontent.com/aws-samples/aws-swb-cloud9-in
 - Set up projen
 ```commandline
 node -v
-npm install -g projen
+sudo npm install -g projen
 ```
 - Prepare your environment
 ```commandline
