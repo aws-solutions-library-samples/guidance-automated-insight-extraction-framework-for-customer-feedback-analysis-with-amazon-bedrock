@@ -186,8 +186,9 @@ sudo npm install -g projen
 ```
 - Prepare your environment
 ```commandline
-git clone git@github.com:aws-samples/automated-llm-insight-discovery-framework.git
-cd automated-llm-insight-discovery-framework
+git clone https://github.com/aws-solutions-library-samples/guidance-automated-insight-extraction-framework-for-customer-feedback-analysis-with-amazon-bedrock.git
+
+cd guidance-automated-insight-extraction-framework-for-customer-feedback-analysis-with-amazon-bedrock
 
 # Setup and activate Python environment
 python -m venv .env
@@ -204,7 +205,8 @@ zip -r layer.zip python/
 
 - CDK deploy
 ```commandline
-cd ~/environment/automated-llm-insight-discovery-framework
+# Jump back to the main project folder
+cd ~/environment/guidance-automated-insight-extraction-framework-for-customer-feedback-analysis-with-amazon-bedrock
 pip install projen
 
 # Initialize and deploy the project (the deployment will takes around 15~20 minutes)
@@ -267,7 +269,9 @@ This framework also stores the pre-defined tags in RDS table `customer_feedback_
 
 Go to CloudFormation stack customer-service-dev, find the value of key ResourceDataBucketName in its output.
 
-- Upload sample_data.csv to the bucket to trigger the end to end workflow
+- Upload [sample_data.csv](docs/sample_data.csv) to the bucket to trigger the end to end workflow
+
+- Make sure to check parallel processing throughput matches with model invocation quotas *i.e.* [Amazon Bedrock endpoints and quotas](https://docs.aws.amazon.com/general/latest/gr/bedrock.html)
 
 
 ## Next Steps
